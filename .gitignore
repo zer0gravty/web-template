@@ -1,0 +1,45 @@
+# Ignore Deno's dependency cache directory
+/deno_dir/
+
+# Ignore environment variable files
+.env
+
+# Ignore log files
+*.log
+
+# Ignore compiled output
+*.out
+*.o
+
+# Ignore temporary files
+*.tmp
+*.swp
+
+# Ignore MacOS generated files
+.DS_Store
+
+# Ignore Visual Studio Code settings
+.vscode/
+
+# Ignore IntelliJ IDEA settings
+.idea/
+
+# Ignore node_modules directory (if present)
+node_modules/
+
+# Ignore coverage reports
+coverage/
+
+# Ignore test reports
+junit.xml
+
+# Ignore flamegraph outputs
+flamebench*.svg
+flamegraph*.svg
+
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Tanstack
+routeTree.gen.ts
+

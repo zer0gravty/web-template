@@ -1,0 +1,32 @@
+{
+  "imports": {
+    "@biomejs/biome": "npm:@biomejs/biome@^1.9.4",
+    "@hono/zod-openapi": "npm:@hono/zod-openapi@^0.18.0",
+    "@std/encoding": "jsr:@std/encoding@^1.0.5",
+    "@types/pg": "npm:@types/pg@^8.11.10",
+    "bcrypt": "https://deno.land/x/bcrypt@v0.4.1/mod.ts",
+    "drizzle-kit": "npm:drizzle-kit@^0.28.1",
+    "drizzle-orm": "npm:drizzle-orm@^0.36.4",
+    "hono": "jsr:@hono/hono@^4.6.11",
+    "hono-pino": "npm:hono-pino@^0.7.0",
+    "pg": "npm:pg@^8.13.1",
+    "pino": "npm:pino@^9.5.0",
+    "pino-pretty": "npm:pino-pretty@^13.0.0",
+    "zod": "https://deno.land/x/zod@v3.23.8/mod.ts"
+  },
+  "nodeModulesDir": "auto",
+  "tasks": {
+    "start": "DENO_ENV=production deno run --allow-net --alow-env main.ts",
+    "dev": "deno run --allow-net --allow-sys --env-file=.env --allow-env --watch main.ts",
+    "lint": "deno run -A npm:@biomejs/biome lint --write .",
+    "format": "deno run -A npm:@biomejs/biome format --write .",
+    "check": "deno run -A npm:@biomejs/biome check --write .",
+    "db:migrate": "deno run -A npm:drizzle-kit generate",
+    "db:preview": "deno run -A npm:drizzle-kit push"
+  },
+  "compilerOptions": {
+    "jsx": "precompile",
+    "jsxImportSource": "hono/jsx",
+    "strict": true
+  }
+}
