@@ -1,7 +1,7 @@
-import { drizzle } from 'drizzle-orm/postgres-js';
-import pg from 'pg';
-import { z } from 'zod';
-import { sessionTable, userTable } from './schemas/auth.ts';
+import { drizzle } from "drizzle-orm/postgres-js";
+import pg from "pg";
+import { z } from "zod";
+import { sessionTable, userTable } from "./schemas/auth.ts";
 
 // Use pg driver.
 const { Pool } = pg;

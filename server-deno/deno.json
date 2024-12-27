@@ -1,6 +1,5 @@
 {
   "imports": {
-    "@biomejs/biome": "npm:@biomejs/biome@^1.9.4",
     "@hono/zod-openapi": "npm:@hono/zod-openapi@^0.18.0",
     "@std/encoding": "jsr:@std/encoding@^1.0.5",
     "@types/pg": "npm:@types/pg@^8.11.10",
@@ -18,9 +17,6 @@
   "tasks": {
     "start": "DENO_ENV=production deno run --allow-net --alow-env main.ts",
     "dev": "deno run --allow-net --allow-sys --env-file=.env --allow-env --watch main.ts",
-    "lint": "deno run -A npm:@biomejs/biome lint --write .",
-    "format": "deno run -A npm:@biomejs/biome format --write .",
-    "check": "deno run -A npm:@biomejs/biome check --write .",
     "db:migrate": "deno run -A npm:drizzle-kit generate",
     "db:preview": "deno run -A npm:drizzle-kit push"
   },

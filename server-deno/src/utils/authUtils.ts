@@ -1,5 +1,5 @@
-import * as encoding from '@std/encoding';
-import type { Session, User } from '../db/schemas/auth.ts';
+import * as encoding from "@std/encoding";
+import type { Session, User } from "../db/schemas/auth.ts";
 
 export function generateSessionToken(length = 20): string {
   const randomBytes = crypto.getRandomValues(new Uint8Array(length));
@@ -9,7 +9,7 @@ export function generateSessionToken(length = 20): string {
 
 export async function createSession(token: string, userId: number): Session {
   const textBuffer = new TextEncoder().encode(token);
-  const hashBuffer = await crypto.subtle.digest('SHA-256', textBuffer);
+  const hashBuffer = await crypto.subtle.digest("SHA-256", textBuffer);
   const hash = encoding.encodeHex(hashBuffer);
 
   const session: Session = {
